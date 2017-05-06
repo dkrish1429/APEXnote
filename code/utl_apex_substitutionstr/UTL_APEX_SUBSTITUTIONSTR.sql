@@ -44,6 +44,7 @@ CREATE OR REPLACE package utl_apex_substitutionstr is
 
 end utl_apex_substitutionstr;
 
+
 /
 
 
@@ -86,7 +87,7 @@ CREATE OR REPLACE package body utl_apex_substitutionstr is
                            l_line_start,
                            l_line_end - l_line_start + 1);
 
-      select instr(l_line_str, l_regexp_keywords, 1, level)
+      select regexp_instr(l_line_str, l_regexp_keywords, 1, level)
         bulk collect
         into l_num_t
         from sys.dual
@@ -289,5 +290,6 @@ CREATE OR REPLACE package body utl_apex_substitutionstr is
   end;
 
 end utl_apex_substitutionstr;
+
 
 /
