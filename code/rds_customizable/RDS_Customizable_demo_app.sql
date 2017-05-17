@@ -27,7 +27,7 @@ prompt APPLICATION 20459 - RDS Customizable
 -- Application Export:
 --   Application:     20459
 --   Name:            RDS Customizable
---   Date and Time:   06:33 Tuesday May 16, 2017
+--   Date and Time:   05:11 Wednesday May 17, 2017
 --   Exported By:     MING.LEI.IT@GMAIL.COM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -40,7 +40,7 @@ prompt APPLICATION 20459 - RDS Customizable
 --     Items:                    2
 --     Processes:                4
 --     Regions:                 22
---     Buttons:                  1
+--     Buttons:                  2
 --   Shared Components:
 --     Logic:
 --     Navigation:
@@ -114,7 +114,7 @@ wwv_flow_api.create_flow(
 ,p_csv_encoding=>'Y'
 ,p_auto_time_zone=>'N'
 ,p_last_updated_by=>'MING.LEI.IT@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20170516054720'
+,p_last_upd_yyyymmddhh24miss=>'20170517041331'
 ,p_email_from=>'ming.lei.it@gmail.com'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
@@ -9106,7 +9106,7 @@ wwv_flow_api.create_page(
 ,p_page_is_public_y_n=>'N'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'MING.LEI.IT@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20170515211245'
+,p_last_upd_yyyymmddhh24miss=>'20170517041331'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(11935444355459682747)
@@ -9122,6 +9122,22 @@ wwv_flow_api.create_page_plug(
 ,p_menu_template_id=>wwv_flow_api.id(11935396175029446189)
 ,p_plug_query_row_template=>1
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(11968914373320811017)
+,p_plug_name=>'RDS  Root'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(11935362891362446153)
+,p_plug_display_sequence=>20
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_plug_source_type=>'PLUGIN_COM.BLOGSPOT.APEXNOTES.APEX.RDS_CUSTOMIZABLE'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'root'
+,p_attribute_02=>'Y'
+,p_attribute_03=>'Show All'
+,p_attribute_04=>'N'
+,p_attribute_06=>'f'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(11968915132836811025)
@@ -9287,28 +9303,13 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(11982772534269678983)
 ,p_plug_name=>'Root RDS container'
-,p_plug_display_sequence=>10
+,p_plug_display_sequence=>30
 ,p_include_in_reg_disp_sel_yn=>'N'
 ,p_plug_display_point=>'REGION_POSITION_01'
 ,p_plug_query_row_template=>1
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
-);
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(11968914373320811017)
-,p_plug_name=>'RDS  Root'
-,p_parent_plug_id=>wwv_flow_api.id(11982772534269678983)
-,p_plug_display_sequence=>10
-,p_include_in_reg_disp_sel_yn=>'N'
-,p_plug_display_point=>'BODY'
-,p_plug_source_type=>'PLUGIN_COM.BLOGSPOT.APEXNOTES.APEX.RDS_CUSTOMIZABLE'
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_attribute_01=>'root'
-,p_attribute_02=>'Y'
-,p_attribute_03=>'Show All'
-,p_attribute_04=>'N'
-,p_attribute_06=>'f'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(11982772672598678984)
@@ -9443,6 +9444,19 @@ wwv_flow_api.create_page_plug(
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(11951913748615104403)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(11935444355459682747)
+,p_button_name=>'i'
+,p_button_action=>'REDIRECT_URL'
+,p_button_template_options=>'#DEFAULT#:t-Button--tiny'
+,p_button_template_id=>wwv_flow_api.id(11935395736312446189)
+,p_button_image_alt=>'😻 iminglei'
+,p_button_position=>'REGION_TEMPLATE_CREATE'
+,p_button_redirect_url=>'javascript:apex.navigation.openInNewWindow("https://iminglei.blogspot.ca/2017/05/rds-customizable-for-apex-51.html");'
+,p_button_execute_validations=>'N'
 );
 end;
 /
@@ -9605,4 +9619,4 @@ commit;
 end;
 /
 set verify on feedback on define on
-prompt  ..
+prompt  .
